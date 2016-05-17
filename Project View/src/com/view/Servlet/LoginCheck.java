@@ -44,7 +44,7 @@ public class LoginCheck extends HttpServlet {
 		{
 			System.out.print(str.nextElement());
 		}/**/
-		System.out.print(username);
+		System.out.println(username);
 		System.out.println(password);
 		response.setContentType("text/plain");
 	    response.setCharacterEncoding("UTF-8");

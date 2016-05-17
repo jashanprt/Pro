@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Login Form</title>
-<link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -18,7 +14,8 @@
 				<input type="password"	placeholder="password" /> 
 					<input type="text"	placeholder="email address" />
 				<button>create</button>
-				<p class="message">Already registered? <a href="#">Sign In</a>
+				<p class="message">
+					Already registered? <a href="#">Sign In</a>
 				</p>
 			</form>
 			<form class="login-form">
@@ -26,7 +23,8 @@
 					<input type="text" placeholder="username" id="user"/> 
 					<input type="password"	placeholder="password" id="pass"/>
 					<button onclick="processLogin()">login</button>
-					<p class="message">Not registered?
+					<p class="message">
+					Not registered? 
 					<a href="#">Create an account</a>
 				</p>
 			</form>
@@ -58,6 +56,7 @@
   		  ajx.send(queryString);
   		  ajx.preventDefault();
     }
+    
     </script>
 
 
