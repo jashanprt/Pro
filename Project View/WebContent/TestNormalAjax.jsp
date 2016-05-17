@@ -43,22 +43,20 @@
     //	 var queryString="username="+document.getElementById("user").value+"&password="+document.getElementById("pass").value;
     var queryString="username=admin&password=admin";
 	  	 var ajx=new XMLHttpRequest();
-  	  	 ajx.onreadystatechange= process();
+  	  	 ajx.onreadystatechange= process(){
+  	    	{
+  	    		if(ajx.readyState==4&&ajx.status==200)
+  	    		{
+  	    			document.getElementById("loginRes").innerHTML = xhttp.responseText;
+  	    		}
+  	  		  }
+  	    };
   	  	 
   		  ajx.open("POST","http://localhost:8080/Project_View/validate","false");
   		  console.log(queryString);
-  		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  		  ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   		  ajx.send(queryString);
   		  ajx.preventDefault();
-    }
-    function process()
-    {
-    	{
-    		if(ajx.readyState==4&&ajx.status==200)
-    		{
-    			document.getElementById("loginRes").innerHTML = xhttp.responseText;
-    		}
-  		  }
     }
     </script>
 
