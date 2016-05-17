@@ -22,7 +22,9 @@
 				</p>
 			</form>
 			<form class="login-form">
-				<p id="loginRes"></p>
+					<p id="loginRes">Please Enter Your Username and Passwords</p>
+					<div id="Res"></div>
+					
 					<input type="text" placeholder="username" id="user"/> 
 					<input type="password"	placeholder="password" id="pass"/>
 					<button id="Sub">login</button>
@@ -38,6 +40,7 @@
 	<script src="js/index.js"></script>
 
 	<script>
+	//var dat;
     $('#Sub').click(function(){ 
         alert('ajax');
         var queryString="username="+document.getElementById("user").value+"&password="+document.getElementById("pass").value;
@@ -48,10 +51,13 @@
              data: queryString,
              url: "http://localhost:8080/Project_View/validate",
              success: function(data){        
-                alert(data);
-            	 document.getElementById("loginRes").innerHTML = "Test";
-            	 console.log(data);
-            	  alert(data);
+             //   alert(data);
+            	 document.getElementById("loginRes").innerHTML = data;
+            	 //console.log(data);
+            	//  alert(data);        
+            	  $('#loginRes').text(data);
+            	  $("#Res").text(responseText); 
+            	  $("#loginRes").load(data);
              }
          });
     });
