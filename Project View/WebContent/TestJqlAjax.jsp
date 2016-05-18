@@ -21,7 +21,7 @@
 				<p class="message">Already registered? <a href="#">Sign In</a>
 				</p>
 			</form>
-			<form class="login-form">
+			<form id="loginform" class="login-form">
 					<p id="loginRes">Please Enter Your Username and Passwords</p>
 					<div id="Res"></div>
 					
@@ -41,7 +41,7 @@
 
 	<script>
 	//var dat;
-    $('#Sub').click(function(){ 
+    $('#loginform').submit(function(event){ 
         alert('ajax');
         var queryString="username="+document.getElementById("user").value+"&password="+document.getElementById("pass").value;
          $.ajax({ 
@@ -51,15 +51,17 @@
              data: queryString,
              url: "http://localhost:8080/Project_View/validate",
              success: function(data){        
-             //   alert(data);
-            	 document.getElementById("loginRes").innerHTML = data;
+                alert(data);
+            	// document.getElementById("loginRes").innerHTML = data;
             	 //console.log(data);
             	//  alert(data);        
-            	  $('#loginRes').text(data);
-            	  $("#Res").text(responseText); 
-            	  $("#loginRes").load(data);
+            	  //$('#loginRes').text(data);
+            	  $("#Res").html(data); 
+            	 // $("#loginRes").load(data);
+            	  alert(data); 
              }
          });
+         event.preventDefault();
     });
     </script>
 
